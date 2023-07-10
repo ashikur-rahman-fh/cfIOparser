@@ -10,7 +10,6 @@ from .saengine import Base
 
 class Settings(Base):
     __tablename__   = "settings"
-    __name__        = 'settings'
 
     key = Column(String(50), primary_key=True)
     default = Column(String(500))
