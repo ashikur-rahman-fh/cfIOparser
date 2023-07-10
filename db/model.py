@@ -6,12 +6,11 @@
 
 from sqlalchemy import Column
 from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from .saengine import Base
 
 class Settings(Base):
-    __tablename__ = "settings"
+    __tablename__   = "settings"
+    __name__        = 'settings'
 
     key = Column(String(50), primary_key=True)
     default = Column(String(500))

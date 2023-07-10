@@ -42,7 +42,8 @@ def parse_content_web(url, selector, one=False):
     """
     soup = None
     try:
-        soup = BeautifulSoup(markup=get_page(url), features="html.parser")
+        content = get_page(url)
+        soup = BeautifulSoup(content, features="html.parser")
     except Exception:
         raise Exception("Invalid URL")
     if one:
