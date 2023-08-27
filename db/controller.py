@@ -3,17 +3,16 @@
     @Author: Ashikur Rahman
     @Description: Provides db utilities like reading and writing to db
 """
-
-from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from db.config import db_conn_str
 from db.model import Settings
+from db.saengine import engine
+
 
 class DbSession:
     """SQLAlchemy session to perform query in the db"""
     def __init__(self) -> None:
-        self.engine = create_engine(db_conn_str, echo=False)
+        self.engine = engine
 
     def __enter__(self):
         self.session = Session(self.engine)

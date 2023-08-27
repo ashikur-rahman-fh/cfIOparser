@@ -75,8 +75,6 @@ def main():
     initial_db_setup()
 
     logger.success("Welcome")
-    logger.info('Info log')
-    logger.error('error')
     parse_contest(contest_id=args.contestId)
 
 
